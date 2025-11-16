@@ -46,30 +46,87 @@ The extension comes from how **use cases** are decomposed into three internal co
 
 ---
 
-#### adapter
-`adapter` exposes infra capabilities in a normalized form.  
+### Adapter
+`Adapter` exposes infra capabilities in a normalized form.  
 It contains no business logic, only bridges external systems into the application boundary.
 
-#### core
-`core` holds the pure use-case rules.  
+### Core
+`Core` holds the pure use-case rules.  
 It must remain deterministic, context-free, and independent from infra or presentation.
 
-#### presentation
-`presentation` interacts only with the application layer.  
+### Presentation
+`Presentation` interacts only with the application layer.  
 It never touches business rules or infra details directly.
+
+### Use Cases (Chimera Extension)
+
+#### Application
+`Application` is the orchestrator of a use case.  
+It coordinates the order of operations between kit, core, and service.
+
+#### Service
+`Service` performs the real workflow steps.  
+It interacts with adapters, executes procedural work, and provides the specific logic required by the use case.
+
+#### Kit
+`Kit` handles messy real-world data and irregular inputs.  
+It cleans, normalizes, and prepares data before passing it to core or service.
+
+--- 
+
+## Rules
+
+1. Must follow **Clean Architecture** dependency rule.  
+2. `Adapter` must pair with a `Verifier` or `Repository`.  
+3. `Adapter` exposes **everything** the underlying library/infra can do.  
+4. `Verifier`/`Repository` stays **stateless** and validates all input before calling the adapter.  
+5. `Application` orchestrates the full use-case flow.  
+6. `Service` provides use-case–specific logic.  
+7. `Kit` handles real-world messy data and external chaos.  
+8. `Executor` is the **single decorator** for logging, timing, and exception capture.  
+
+9. There are **3 levels of dependency injection**:  
+   - Static dependencies via **DI container**.  
+   - Runtime context injected via **Init()**.  
+   - Runtime types injected via **inheritance or factory**.  
+
+10. All layers use **composition first**, inheritance second, and marker interfaces to lock behavior contracts + enable DI wiring.  
+11. **Template Method** defines shared boilerplate and allows subclasses to override specific steps.  
+12. `EnsureInit()` blocks execution until all required context is ready.  
+
+13. Each use-case expands **only as needed**:  
+    - Simple flows → only `Application` (**pure Clean Architecture**).  
+    - Medium flows → + `Service`.  
+    - Heavy flows → + `Kit` to isolate external chaos.  
+    - Data-driven flows → + `Repository`.  
+
+14. No logic inside **Adapter**; no infra inside **Service**; no business inside **Repository**.  
+15. Boundaries must **never leak** — data crosses layers only via DTO/VO.  
+16. No global state — all state must live inside controlled runtime context.  
+17. The system grows or shrinks with complexity, but **boundaries stay clean and stable**.
 
 ---
 
-### Use Case Composition (Chimera Extension)
+## Real Real Motivation
+`Chimera Architecture` was designed to push `Clean Architecture` toward higher flexibility while keeping the dependency rule intact.
+Its core idea is simple — **every layer follows the same lifecycle pattern, allowing real-world messy data and complex object flows to be handled without breaking boundaries**.
 
-#### application
-`application` is the orchestrator of a use case.  
-It coordinates the order of operations between kit, core, and service.
+**Over time, the project naturally forms a set of directories whose files share the same structural rhythm** (Application → Service → Kit → Repository → Adapter).
+This uniformity creates two major advantages:
 
-#### service
-`service` performs the real workflow steps.  
-It interacts with adapters, executes procedural work, and provides the specific logic required by the use case.
+- **Flexibility** — components can be swapped, extended, or specialized with minimal friction.
 
-#### kit
-`kit` handles messy real-world data and irregular inputs.  
-It cleans, normalizes, and prepares data before passing it to core or service.
+- **AI-friendliness** — the predictable file structure allows AI tools to read, generate, and refactor code consistently.
+
+This architecture becomes a repeatable ecosystem where developers and AI can collaborate, explore, and iterate with clarity.
+
+---
+
+## Benefits
+
+- **Extremely flexible**, because each use-case can scale up or down depending on business complexity.  
+- **Three levels of injection** allow Chimera Architecture to handle runtime objects (e.g., WebView2) and even transform behavior on demand — while still respecting dependency rules.  
+- **Composition × Template Method × Marker Interface** reduces boilerplate but still respects dependency inversion.  
+- Each use-case component becomes **truly SRP**.  
+  At scale, this produces a natural effect where each file type shares a consistent structure.  
+- This structural similarity makes it **AI-friendly**, enabling AI to become an onboarding assistant or even a boilerplate generator.
