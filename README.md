@@ -108,17 +108,39 @@ It cleans, normalizes, and prepares data before passing it to core or service.
 ---
 
 ## Real Real Motivation
-`Chimera Architecture` was designed to push `Clean Architecture` toward higher flexibility while keeping the dependency rule intact.
-Its core idea is simple — **every layer follows the same lifecycle pattern, allowing real-world messy data and complex object flows to be handled without breaking boundaries**.
 
-**Over time, the project naturally forms a set of directories whose files share the same structural rhythm** (Application → Service → Kit → Repository → Adapter).
-This uniformity creates two major advantages:
+`Chimera Architecture` was designed to push `Clean Architecture` toward higher **flexibility** while keeping the **dependency rule** fully intact.  
+Its core idea is simple — every layer follows the same lifecycle pattern, allowing messy real-world data and complex object flows to be handled without breaking boundaries.
 
-- **Flexibility** — components can be swapped, extended, or specialized with minimal friction.
+A key property of `Chimera Architecture` is the **structural rhythm inside each file type**:
 
-- **AI-friendliness** — the predictable file structure allows AI tools to read, generate, and refactor code consistently.
+- `Application` – only orchestration.  
+- `Service` – only **small, minimal business logic**.  
+- `Kit` – only **data cleanup, normalization, and transformation**.  
+- `Repository` – only data access.  
+- `Adapter` – only infra capabilities, no business rules.
 
-This architecture becomes a repeatable ecosystem where developers and AI can collaborate, explore, and iterate with clarity.
+Because each layer keeps a single, predictable responsibility, the entire architecture forms a stable pattern with **low boilerplate** and **clear separation**.  
+New developers can understand a use case simply by reading its context rather than navigating framework magic or scattered logic.
+
+### AI as a Natural Assistant
+
+This consistency makes the architecture deeply **AI-friendly**:
+
+- AI knows the theoretical structure better than a typical senior.  
+- AI is **consistent**, unbiased, and follows rules without ego.  
+- AI can correct misuse of layers and maintain structural purity.  
+- AI can train juniors by “fighting” them all day until the logic makes sense.  
+- AI can generate boilerplate and enforce boundaries reliably.
+
+As a result, `Chimera Architecture` becomes a **repeatable ecosystem** where:
+
+- senior developers set direction,  
+- juniors learn faster through consistent patterns,  
+- and AI acts as a tireless reviewer, coach, and collaborator.
+
+Humans and AI can iterate, refine, and expand the system with clarity.
+
 
 ---
 
