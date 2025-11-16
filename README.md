@@ -48,14 +48,14 @@ The extension comes from how **use cases** are decomposed into three internal co
 
 ### Adapter
 `Adapter` exposes infra capabilities in a normalized form.  
-It contains no business logic, only bridges external systems into the application boundary.
+It contains no business logic, only bridges external systems into the `Use cases` boundary.
 
 ### Core
 `Core` holds the pure use-case rules.  
 It must remain deterministic, context-free, and independent from infra or presentation.
 
 ### Presentation
-`Presentation` interacts only with the application layer.  
+`Presentation` interacts only with the `Use cases` layer.  
 It never touches business rules or infra details directly.
 
 ### Use Cases (Chimera Extension)
@@ -66,7 +66,7 @@ It coordinates the order of operations between kit, core, and service.
 
 #### Service
 `Service` performs the real workflow steps.  
-It interacts with adapters, executes procedural work, and provides the specific logic required by the use case.
+It interacts with `Adapter Interface`, executes procedural work, and provides the specific logic required by the use case.
 
 #### Kit
 `Kit` handles messy real-world data and irregular inputs.  
