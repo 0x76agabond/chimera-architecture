@@ -117,11 +117,8 @@ A key property of `Chimera Architecture` is the **structural rhythm inside each 
 - `Application` – only orchestration.  
 - `Service` – only **small, minimal business logic**.  
 - `Kit` – only **data cleanup, normalization, and transformation**.  
-- `Repository` – only data access.  
-- `Adapter` – only infra capabilities, no business rules.
 
 Because each layer keeps a single, predictable responsibility, the entire architecture forms a stable pattern with **low boilerplate** and **clear separation**.  
-New developers can understand a use case simply by reading its context rather than navigating framework magic or scattered logic.
 
 ### AI as a Natural Assistant
 
@@ -130,17 +127,16 @@ This consistency makes the architecture deeply **AI-friendly**:
 - AI knows the theoretical structure better than a typical senior.  
 - AI is **consistent**, unbiased, and follows rules without ego.  
 - AI can correct misuse of layers and maintain structural purity.  
-- AI can train juniors by “fighting” them all day until the logic makes sense.  
+- AI can help onboard new team member by “fighting” them all day until the logic makes sense.  
 - AI can generate boilerplate and enforce boundaries reliably.
 
 As a result, `Chimera Architecture` becomes a **repeatable ecosystem** where:
 
-- senior developers set direction,  
-- juniors learn faster through consistent patterns,  
-- and AI acts as a tireless reviewer, coach, and collaborator.
+- Senior developers set direction,  
+- Juniors learn faster through consistent patterns
+- AI acts as a tireless reviewer, coach, and collaborator.
 
 Humans and AI can iterate, refine, and expand the system with clarity.
-
 
 ---
 
@@ -149,6 +145,7 @@ Humans and AI can iterate, refine, and expand the system with clarity.
 - **Extremely flexible**, because each use-case can scale up or down depending on business complexity.  
 - **Three levels of injection** allow Chimera Architecture to handle runtime objects (e.g., WebView2) and even transform behavior on demand — while still respecting dependency rules.  
 - **Composition × Template Method × Marker Interface** reduces boilerplate but still respects dependency inversion.  
+- In cases where multiple `entity` share similar columns, the reduction in **boilerplate** becomes highly significant.
 - Each use-case component becomes **truly SRP**.  
   At scale, this produces a natural effect where each file type shares a consistent structure.  
 - This structural similarity makes it **AI-friendly**, enabling AI to become an onboarding assistant or even a boilerplate generator.
