@@ -1,0 +1,84 @@
+# Template Method × Composition × Marker Interface
+
+This pattern is used across the Chimera Architecture to keep each layer predictable, easy to extend, and free from boilerplate.  
+It combines three simple ideas:
+
+- **Template Method** → shared flow, overridable details  
+- **Composition** → behavior is injected, not inherited  
+- **Marker Interface** → type-safe contracts without extra logic
+
+---
+
+# Rule
+
+- Template Method only defines the **cutting-edge workflow**, not business rules.  
+- Template Methods are **append-only** — never modify existing steps.  
+- If a major change is needed and **30%+ classes** require it → create a new template.  
+- If a feature is needed by **<20%** of classes → use pure Composition × Interface, not inheritance.  
+- Child classes may override anything from the Template Method.
+
+---
+
+## Example
+
+**Abstract Template: shared workflow**
+
+```csharp
+public abstract class ApplicationRepository : ApplicationRepositoryInterface
+{
+    protected readonly ExecutorInterface executor;
+    protected readonly DatabaseAdapterInterface da;
+
+    public ApplicationRepository(ExecutorInterface executor, DatabaseAdapterInterface da)
+    {
+        this.executor = executor;
+        this.da = da;
+    }
+
+    // Template Method: common workflow for all repositories
+    public virtual async Task<Result<int>> SaveDataAsync<T>(List<T> elems) where T : class
+    {
+        return await executor.RunAsync(
+            LogLayer.Repository,
+            nameof(SaveDataAsync),
+            async () =>
+            {
+                var rs = await da.CreateMultiAsync(elems);
+                Validation.vResultData(rs);
+                return rs.Data;
+            }
+        );
+    }
+}
+```
+
+**Concrete Class: composition + configuration, no boilerplate**
+
+```csharp
+public class TypeRepository : ApplicationRepository, TypeRepositoryInterface
+{
+    public TypeRepository(
+      ExecutorInterface executor, DatabaseAdapterInterface da) : base(executor, da)
+    {
+        table_applicant = "tbl_applicant_type";
+        table_application = "tbl_application_type";
+    }
+}
+```
+
+**Concrete Class: composition + configuration, no boilerplate**
+```csharp
+public interface TypeRepositoryInterface : ApplicationRepositoryInterface
+{
+    // no extra methods — marker only
+}
+```
+## Benefit
+
+- Significantly reduces boilerplate when multiple classes share similar workflows
+
+- Concrete classes override only what matters
+
+- Supports DI cleanly even with abstract base classes
+
+- Encourages consistency across layers without forcing inheritance everywhere
