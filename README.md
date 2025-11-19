@@ -1,5 +1,4 @@
-# Chimera Architecture
-
+# Chimera Architecture 
 A lightweight architectural experiment combining `Clean Architecture` with selective design patterns to increase flexibility and reduce boilerplate. 
 
 ---
@@ -124,15 +123,15 @@ Because each layer keeps a single, predictable responsibility, the entire archit
 
 This consistency makes the architecture deeply **AI-friendly**:
 
-- AI knows the theoretical structure better than a typical senior.  
-- AI is **consistent**, unbiased, and follows rules without ego.  
+- AI knows the theoretical structure better than a typical senior (***me**).  
+- AI is **consistent** and follows rules without ego.  
 - AI can correct misuse of layers and maintain structural purity.  
 - AI can help onboard new team member by “fighting” them all day until the logic makes sense.  
 - AI can generate boilerplate and enforce boundaries reliably.
 
 As a result, `Chimera Architecture` becomes a **repeatable ecosystem** where:
 
-- Senior developers set direction,  
+- Senior developers set direction.  
 - Juniors learn faster through consistent patterns
 - AI acts as a tireless reviewer, coach, and collaborator.
 
@@ -152,4 +151,10 @@ Humans and AI can iterate, refine, and expand the system with clarity.
 
 
 ## Real Real Real Motivation
-Got ya, this section is pure troll
+Got ya, this section is troll
+
+## Conclusion
+- `Chimera Architecture` is an extended version of `Clean Architecture` with higher flexibility and lower boilerplate.
+- The idea of **“misusing anti-patterns”** means **leveraging strong patterns that normally carry high trade-offs, but implementing them in a controlled way so the risk becomes acceptable or even beneficial**.
+- `Clean Architecture` is already inherently **AI-friendly**, so any architecture built on top of it becomes naturally compatible with AI reasoning.
+- Reduced boilerplate means fewer tokens and smaller class context, which increases the chance that an AI assistant can fully understand, manipulate, and refactor the file without losing context.
