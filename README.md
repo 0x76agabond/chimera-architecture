@@ -1,15 +1,15 @@
-# Chimera Architecture 
+# **Chimera Architecture**
 A lightweight architectural experiment combining `Clean Architecture` with selective design patterns to increase flexibility and reduce boilerplate. 
 
 ---
 
-## Abstract
+## **Abstract**
 
 `Chimera Architecture` is an extended version of  `Clean Architecture` with **higher flexibility** while keeping dependency rules intact. It **handles messy real-world data, complex object lifecycles, and reduces boilerplate** through composition-driven adapters.
 
 ---
 
-## Motivation
+## **Motivation**
 
 I’ve been exploring modern software principles and noticed that many failures actually come from misusing features that were originally useful.
 
@@ -21,7 +21,7 @@ What happens if I intentionally misuse anti-patterns to build an architecture?
 
 ---
 
-## Real Motivation
+## **Real Motivation**
 
 Modern architectures like `Hexagonal` or `Clean Architecture` are great, but they come with real-world gaps:
 
@@ -36,7 +36,7 @@ It mixes **multiple design patterns, OOP techniques, and architectural principle
 
 ---
 
-## Architecture
+## **Architecture**
 
 `Chimera Architecture` keeps **adapter**, **core**, and **presentation** behaving exactly as in original clean architecture.  
 The extension comes from how **use cases** are decomposed into three internal components **application**, **service**, **kit**.
@@ -73,7 +73,7 @@ It cleans, normalizes, and prepares data before passing it to core or service.
 
 --- 
 
-## Rules
+## **Rules**
 
 1. Must follow **Clean Architecture** dependency rule.  
 2. `Adapter` must pair with a `Verifier` or `Repository`.  
@@ -106,7 +106,7 @@ It cleans, normalizes, and prepares data before passing it to core or service.
 
 ---
 
-## Real Real Motivation
+## **Real Real Motivation**
 
 `Chimera Architecture` was designed to push `Clean Architecture` toward higher **flexibility** while keeping the **dependency rule** fully intact.  
 Its core idea is simple — every layer follows the same lifecycle pattern, allowing messy real-world data and complex object flows to be handled without breaking boundaries.
@@ -139,7 +139,7 @@ Humans and AI can iterate, refine, and expand the system with clarity.
 
 ---
 
-## Benefits
+## **Benefits**
 
 - **Extremely flexible**, because each use-case can scale up or down depending on business complexity.  
 - **Three levels of injection** allow Chimera Architecture to handle runtime objects (e.g., WebView2) and even transform behavior on demand — while still respecting dependency rules.  
@@ -149,11 +149,10 @@ Humans and AI can iterate, refine, and expand the system with clarity.
   At scale, this produces a natural effect where each file type shares a consistent structure.  
 - This structural similarity makes it **AI-friendly**, enabling AI to become an onboarding assistant or even a boilerplate generator.
 
+## **Real Real Real Motivation**
+*I did all these things because I'm too lazy to copy-paste boilerplate and I'm unemployed. Poor me.*
 
-## Real Real Real Motivation
-Got ya, this section is troll
-
-## Conclusion
+## **Conclusion**
 - `Chimera Architecture` is an extended version of `Clean Architecture` with higher flexibility and lower boilerplate.
 - The idea of **“misusing anti-patterns”** means **leveraging strong patterns that normally carry high trade-offs, but implementing them in a controlled way so the risk becomes acceptable or even beneficial**.
 - `Clean Architecture` is already inherently **AI-friendly**, so any architecture built on top of it becomes naturally compatible with AI reasoning.
