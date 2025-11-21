@@ -39,7 +39,7 @@ It mixes **multiple design patterns, OOP techniques, and architectural principle
 ## **Architecture**
 
 `Chimera Architecture` keeps **adapter**, **core**, and **presentation** behaving exactly as in original clean architecture.  
-The extension comes from how **use cases** are decomposed into three internal components **application**, **service**, **kit**.
+The extension comes from how **use cases** are decomposed into three internal components **flow**, **service**, **kit**.
 
 ![Architecture](https://drive.google.com/uc?export=view&id=1i90STJxnKBzg38mWZEDMzxj8OiIMo3Ba)
 
@@ -59,8 +59,8 @@ It never touches business rules or infra details directly.
 
 ### Use Cases (Chimera Extension)
 
-#### Application
-`Application` is the orchestrator of a use case.  
+#### Flow
+`Flow` is the orchestrator of a use case.  
 It coordinates the order of operations between kit, core, and service.
 
 #### Service
@@ -79,7 +79,7 @@ It cleans, normalizes, and prepares data before passing it to core or service.
 2. `Adapter` must pair with a `Verifier` or `Repository`.  
 3. `Adapter` exposes **everything** the underlying library/infra can do.  
 4. `Verifier`/`Repository` stays **stateless** and validates all input before calling the adapter.  
-5. `Application` orchestrates the full use-case flow.  
+5. `Flow` orchestrates the full use-case flow.  
 6. `Service` provides use-case–specific logic.  
 7. `Kit` handles real-world messy data and external chaos.  
 8. `Executor` is the **single decorator** for logging, timing, and exception capture.  
@@ -94,12 +94,12 @@ It cleans, normalizes, and prepares data before passing it to core or service.
 12. `EnsureInit()` blocks execution until all required context is ready.  
 
 13. Each use-case expands **only as needed**:  
-    - Simple flows → only `Application` (**pure Clean Architecture**).  
-    - Medium flows → + `Service`.  
-    - Heavy flows → + `Kit` to isolate external chaos.  
-    - Data-driven flows → + `Repository`.  
+    - Simple flows → only `Service` (**pure Clean Architecture**).  
+    - Need multiple step → add `Flow`.  
+    - Heavy data handler → add `Kit` to isolate external chaos.  
+    - Need to do CRUD → add `Repository`.  
 
-14. No logic inside **Adapter**; no infra inside **Service**; no business inside **Repository**.  
+14. No logic inside **Adapter**, no infra inside **Service**, no business inside **Repository**.  
 15. Boundaries must **never leak** — data crosses layers only via DTO/VO.  
 16. No global state — all state must live inside controlled runtime context.  
 17. The system grows or shrinks with complexity, but **boundaries stay clean and stable**.
@@ -113,7 +113,7 @@ Its core idea is simple — every layer follows the same lifecycle pattern, allo
 
 A key property of `Chimera Architecture` is the **structural rhythm inside each file type**:
 
-- `Application` – only orchestration.  
+- `Flow` – only orchestration.  
 - `Service` – only **small, minimal business logic**.  
 - `Kit` – only **data cleanup, normalization, and transformation**.  
 
