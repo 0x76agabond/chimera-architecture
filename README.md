@@ -17,7 +17,7 @@ I’ve been exploring modern software principles and noticed that many failures 
 - Some anti-patterns are basically **real patterns… just executed in the wrong context**.
 
 So I wondered, **if misuse can flip good ideas into bad outcomes, maybe the reverse is also true**. 
-What happens if I intentionally misuse anti-patterns to build an architecture?
+What happens if I **misuse anti-patterns** to build an architecture?
 
 ---
 
@@ -36,9 +36,24 @@ It mixes **multiple design patterns, OOP techniques, and architectural principle
 
 ---
 
+## **Solutions**
+`Chimera` is a **collection of design** patterns that extend `Clean Architecture`.
+
+The core idea is **push each pattern to its maximum power** while **managing its trade-offs through architecture**.
+
+Each pattern in `Chimera` can be:
+
+- **Applied individually** to solve a specific real-world problem, or
+
+- **Combined together** to create a consistent, full-stack architectural style.
+
+In its complete form, `Chimera` becomes a **flexible, powerful, and highly disciplined architecture** — capable of **handling messy data, evolving workflows, and complex system lifecycles** without breaking the `Clean Architecture` principles.
+
+---
+
 ## **Architecture**
 
-`Chimera Architecture` keeps **adapter**, **core**, and **presentation** behaving exactly as in original clean architecture.  
+`Chimera` keeps **adapter**, **core**, and **presentation** behaving exactly as in original clean architecture.  
 The extension comes from how **use cases** are decomposed into three internal components **flow**, **service**, **kit**.
 
 ![Architecture](https://drive.google.com/uc?export=view&id=1i90STJxnKBzg38mWZEDMzxj8OiIMo3Ba)
@@ -73,45 +88,12 @@ It cleans, normalizes, and prepares data before passing it to core or service.
 
 --- 
 
-## **Rules**
-
-1. Must follow **Clean Architecture** dependency rule.  
-2. `Adapter` must pair with a `Verifier` or `Repository`.  
-3. `Adapter` exposes **everything** the underlying library/infra can do.  
-4. `Verifier`/`Repository` stays **stateless** and validates all input before calling the adapter.  
-5. `Flow` orchestrates the full use-case flow.  
-6. `Service` provides use-case–specific logic.  
-7. `Kit` handles real-world messy data and external chaos.  
-8. `Executor` is the **single decorator** for logging, timing, and exception capture.  
-
-9. There are **3 levels of dependency injection**:  
-   - Static dependencies via **DI container**.  
-   - Runtime context injected via **Init()**.  
-   - Runtime types injected via **inheritance or factory**.  
-
-10. All layers use **composition first**, inheritance second, and marker interfaces to lock behavior contracts + enable DI wiring.  
-11. **Template Method** defines shared boilerplate and allows subclasses to override specific steps.  
-12. `EnsureInit()` blocks execution until all required context is ready.  
-
-13. Each use-case expands **only as needed**:  
-    - Simple flows → only `Service` (**pure Clean Architecture**).  
-    - Need multiple step → add `Flow`.  
-    - Heavy data handler → add `Kit` to isolate external chaos.  
-    - Need to do CRUD → add `Repository`.  
-
-14. No logic inside **Adapter**, no infra inside **Service**, no business inside **Repository**.  
-15. Boundaries must **never leak** — data crosses layers only via DTO/VO.  
-16. No global state — all state must live inside controlled runtime context.  
-17. The system grows or shrinks with complexity, but **boundaries stay clean and stable**.
-
----
-
 ## **Real Real Motivation**
 
-`Chimera Architecture` was designed to push `Clean Architecture` toward higher **flexibility** while keeping the **dependency rule** fully intact.  
+`Chimera` was designed to push `Clean Architecture` toward higher **flexibility** while keeping the **dependency rule** fully intact.  
 Its core idea is simple — every layer follows the same lifecycle pattern, allowing messy real-world data and complex object flows to be handled without breaking boundaries.
 
-A key property of `Chimera Architecture` is the **structural rhythm inside each file type**:
+A key property of `Chimera` is the **structural rhythm inside each file type**:
 
 - `Flow` – only orchestration.  
 - `Service` – only **small, minimal business logic**.  
@@ -119,17 +101,17 @@ A key property of `Chimera Architecture` is the **structural rhythm inside each 
 
 Because each layer keeps a single, predictable responsibility, the entire architecture forms a stable pattern with **low boilerplate** and **clear separation**.  
 
-### AI as a Natural Assistant
+#### **AI as a Natural Assistant**
 
-This consistency makes the architecture deeply **AI-friendly**:
+This consistency makes the architecture  **AI-friendly**:
 
 - AI knows the theoretical structure better than a typical senior (***me**).  
 - AI is **consistent** and follows rules without ego.  
 - AI can correct misuse of layers and maintain structural purity.  
-- AI can help onboard new team member by “fighting” them all day until the logic makes sense.  
+- AI can help onboard new team member by “fighting” them all day.  
 - AI can generate boilerplate and enforce boundaries reliably.
 
-As a result, `Chimera Architecture` becomes a **repeatable ecosystem** where:
+As a result, `Chimera` becomes a **repeatable ecosystem** where:
 
 - Senior developers set direction.  
 - Juniors learn faster through consistent patterns
@@ -153,7 +135,7 @@ Humans and AI can iterate, refine, and expand the system with clarity.
 *I did all these things because I'm too lazy to copy-paste boilerplate and I'm unemployed. Poor me.*
 
 ## **Conclusion**
-- `Chimera Architecture` is an extended version of `Clean Architecture` with higher flexibility and lower boilerplate.
+- `Chimera` is an extended version of `Clean Architecture` with higher flexibility and lower boilerplate.
 - The idea of **“misusing anti-patterns”** means **leveraging strong patterns that normally carry high trade-offs, but implementing them in a controlled way so the risk becomes acceptable or even beneficial**.
 - `Clean Architecture` is already inherently **AI-friendly**, so any architecture built on top of it becomes naturally compatible with AI reasoning.
-- Reduced boilerplate means fewer tokens and smaller class context, which increases the chance that an AI assistant can fully understand, manipulate, and refactor the file without losing context.
+- Reduced boilerplate means fewer tokens and smaller class context, which increases the chance that an AI assistant can fully understand, refactor the file without losing context.
