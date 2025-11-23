@@ -31,8 +31,8 @@ to safely improve flexibility while keeping the core principles intact.
 5. **3 Levels of DI** – **Static DI × Context Injection × Type Manipulation**  
    Hybrid injection model combining container DI, runtime context, and safe runtime type overrides.
 
-6. **Database** – **Adapter × Dynamic SQL × Repository**  
-   Adapter handles raw infra, Repository provides domain access, Dynamic SQL gives flexibility.
+6. **Database** – **Adapter × Dynamic Query × Repository**  
+   Adapter handles raw infra, Repository provides domain access, Dynamic Query gives flexibility.
 
 7. **Adapter** – **Raw Infra × Verifier**  
    Low-level infrastructure wrapped with a Verifier to enforce boundary safety before execution.
