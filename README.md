@@ -139,3 +139,4 @@ Humans and AI can iterate, refine, and expand the system with clarity.
 - The idea of **“misusing anti-patterns”** means **leveraging strong patterns that normally carry high trade-offs, but implementing them in a controlled way so the risk becomes acceptable or even beneficial**.
 - `Clean Architecture` is already inherently **AI-friendly**, so any architecture built on top of it becomes naturally compatible with AI reasoning.
 - Reduced boilerplate means fewer tokens and smaller class context, which increases the chance that an AI assistant can fully understand, refactor the file without losing context.
+
