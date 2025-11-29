@@ -9,8 +9,10 @@ Some are modified or intentionally misused to gain their strengths while mitigat
 ---
 
 ## **Real Goal**
-A set of `Architectural Patterns` that developers can mix with `Clean Architecture`  
-to safely improve flexibility while keeping the core principles intact.
+- A set of `Architectural Patterns` that developers can mix with `Clean Architecture`  
+to safely improve flexibility while keeping the core principles.  
+- An architectural structure that can **scale according to project complexity**,
+remaining simple for small systems and progressively structured for larger ones.
 
 ---
 
@@ -37,8 +39,11 @@ to safely improve flexibility while keeping the core principles intact.
 7. **Adapter** – **Raw Infra × Verifier**  
    Low-level infrastructure wrapped with a Verifier to enforce boundary safety before execution.
 
-8. **Authorization** – **Reflection × DDD × Cache**  
-   Auto-authorization based on namespace/domain rules — no more attributes required.
+8. **Meta Programing** - **Reflection x Caching**.  
+   Controlled use of reflection combined with caching to enable flexibility without significant performance costs.
 
-9. **Vision** – **Log × Architecture × AI**  
+9. **Authorization** – **Reflection × DDD**  
+   Auto-authorization based on namespace/domain rules, no more attributes required.
+
+10. **Vision** – **Log × Architecture × AI**  
    AI as developer, reviewer, onboarding assistant, and boilerplate generator.
