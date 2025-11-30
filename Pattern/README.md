@@ -4,16 +4,15 @@ This directory lists the core patterns used across Chimera Architecture.
 Some are modified or intentionally misused to gain their strengths while mitigating their trade-offs.
 
 ## **Goal**
-**A practical, flexible, and robust architecture built on predictable patterns.**
+- Build a practical, flexible, and robust architecture.
+- Provide a way to make complex patterns easy to debug.
 
 ---
 
 ## **Real Goal**
-- A set of `Architectural Patterns` that developers can mix with `Clean Architecture`  
-to safely improve flexibility while keeping the core principles.  
+- A set of `Architectural Patterns` that developers can mix with `Clean Architecture` to safely improve flexibility while keeping the core principles.  
 - An architectural structure that can **scale according to project complexity**,
 remaining simple for small systems and progressively structured for larger ones.
-
 ---
 
 ## **Menu**
