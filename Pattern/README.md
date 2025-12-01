@@ -32,17 +32,17 @@ remaining simple for small systems and progressively structured for larger ones.
 5. **3 Levels of DI** – **Static DI × Context Injection × Type Manipulation**  
    Hybrid injection model combining container DI, runtime context, and safe runtime type overrides.
 
-6. **Database** – **Adapter × Dynamic Query × Repository**  
-   Adapter handles raw infra, Repository provides domain access, Dynamic Query gives flexibility.
+6. **Meta Programing** - **Reflection x Caching**.  
+   Controlled use of reflection combined with caching to enable flexibility without significant performance costs.
 
 7. **Adapter** – **Raw Infra × Verifier**  
    Low-level infrastructure wrapped with a Verifier to enforce boundary safety before execution.
 
-8. **Meta Programing** - **Reflection x Caching**.  
-   Controlled use of reflection combined with caching to enable flexibility without significant performance costs.
+8. **Database** – **Adapter × Dynamic Query × Repository**  
+   Adapter handles raw infra, Repository provides domain access, Dynamic Query gives flexibility.
 
 9. **Authorization** – **Reflection × DDD**  
    Auto-authorization based on namespace/domain rules, no more attributes required.
 
-10. **Vision** – **Log × Architecture × AI**  
+10. **Vision** – **Architecture × AI x Log**  
    AI as developer, reviewer, onboarding assistant, and boilerplate generator.
