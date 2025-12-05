@@ -7,13 +7,10 @@ Some are modified or intentionally misused to gain their strengths while mitigat
 - Build a practical, flexible, and robust architecture.
 - Provide a way to make complex patterns easy to debug.
 
----
-
 ## **Real Goal**
 - A set of `Architectural Patterns` that developers can mix with `Clean Architecture` to safely improve flexibility while keeping the core principles.  
 - An architectural structure that can **scale according to project complexity**,
 remaining simple for small systems and progressively structured for larger ones.
----
 
 ## **Menu**
 
@@ -44,5 +41,8 @@ remaining simple for small systems and progressively structured for larger ones.
 9. **Authorization** – **Reflection × DDD**  
    Auto-authorization based on namespace/domain rules, no more attributes required.
 
-10. **Vision** – **Architecture × AI x Log**  
+10. **Final Debate**  
+   I talk about other concerns / hidden trade-offs that don’t fit anywhere else.
+
+11. **Vision** – **Architecture × AI**  
    AI as developer, reviewer, onboarding assistant, and boilerplate generator.
