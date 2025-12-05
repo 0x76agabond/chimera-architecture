@@ -132,7 +132,7 @@ Humans and AI can iterate, refine, and expand the system with clarity.
 - This structural similarity makes it **AI-friendly**, enabling AI to become an onboarding assistant or even a boilerplate generator.
 
 ## **Real Real Real Motivation**
-*I did all these things because I'm too lazy to copy-paste boilerplate and I'm unemployed. Poor me.*
+*I did all these things because I'm too lazy to copy-paste boilerplate. Poor me.*
 
 ## **Conclusion**
 - `Chimera` is an extended version of `Clean Architecture` with higher flexibility and lower boilerplate.
