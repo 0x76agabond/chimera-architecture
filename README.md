@@ -7,8 +7,6 @@ A lightweight architectural experiment combining `Clean Architecture` with selec
 
 `Chimera Architecture` is an extended version of  `Clean Architecture` with **higher flexibility** while keeping dependency rules intact. It **handles messy real-world data, complex object lifecycles, and reduces boilerplate** through composition-driven adapters.
 
----
-
 ## **Motivation**
 
 I’ve been exploring modern software principles and noticed that many failures actually come from misusing features that were originally useful.
@@ -18,8 +16,6 @@ I’ve been exploring modern software principles and noticed that many failures 
 
 So I wondered, **if misuse can flip good ideas into bad outcomes, maybe the reverse is also true**. 
 What happens if I **misuse anti-patterns** to build an architecture?
-
----
 
 ## **Real Motivation**
 
@@ -34,8 +30,6 @@ Modern architectures like `Hexagonal` or `Clean Architecture` are great, but the
 `Chimera Architecture` is my attempt to address these gaps.
 It mixes **multiple design patterns, OOP techniques, and architectural principles** on top of `Clean Architecture` (which is why I call it `Chimera`).
 
----
-
 ## **Solutions**
 `Chimera` is a **collection of design** patterns that extend `Clean Architecture`.
 
@@ -49,16 +43,12 @@ Each pattern in `Chimera` can be:
 
 In its complete form, `Chimera` becomes a **flexible, powerful, and highly disciplined architecture** — capable of **handling messy data, evolving workflows, and complex system lifecycles** without breaking the `Clean Architecture` principles.
 
----
-
 ## **Architecture**
 
 `Chimera` keeps **adapter**, **core**, and **presentation** behaving exactly as in original clean architecture.  
 The extension comes from how **use cases** are decomposed into three internal components **flow**, **service**, **kit**.
 
 ![Architecture](https://drive.google.com/uc?export=view&id=1i90STJxnKBzg38mWZEDMzxj8OiIMo3Ba)
-
----
 
 ### Adapter
 `Adapter` exposes infra capabilities in a normalized form.  
@@ -85,8 +75,6 @@ It interacts with `Adapter Interface`, executes procedural work, and provides th
 #### Kit
 `Kit` handles messy real-world data and irregular inputs.  
 It cleans, normalizes, and prepares data before passing it to core or service.
-
---- 
 
 ## **Real Real Motivation**
 
@@ -118,8 +106,6 @@ As a result, `Chimera` becomes a **repeatable ecosystem** where:
 - AI acts as a tireless reviewer, coach, and collaborator.
 
 Humans and AI can iterate, refine, and expand the system with clarity.
-
----
 
 ## **Benefits**
 
