@@ -41,8 +41,5 @@ remaining simple for small systems and progressively structured for larger ones.
 9. **Authorization** – **Reflection × DDD**  
    Auto-authorization based on namespace/domain rules, no more attributes required.
 
-10. **Final Debate**  
-   I talk about other concerns / hidden trade-offs that don’t fit anywhere else.
-
-11. **Vision** – **Architecture × AI**  
+10. **Vision** – **Architecture × AI**  
    AI as developer, reviewer, onboarding assistant, and boilerplate generator.
