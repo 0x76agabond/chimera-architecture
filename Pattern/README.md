@@ -4,18 +4,15 @@ This directory lists the core patterns used across Chimera Architecture.
 Some are modified or intentionally misused to gain their strengths while mitigating their trade-offs.
 
 ## **Goal**
-- Build a practical, flexible, and robust architecture.
-- Provide a way to make complex patterns easy to debug.
-
-## **Real Goal**
 - A set of `Architectural Patterns` that developers can mix with `Clean Architecture` to safely improve flexibility while keeping the core principles.  
 - An architectural structure that can **scale according to project complexity**,
 remaining simple for small systems and progressively structured for larger ones.
+- You do not need to adopt the whole `Chimera` stack. Each pattern works on its own, so use only the parts that actually useful for your case.
 
 ## **Menu**
 
 1. **Helloworld**  
-   An introduction to the fundamental rules and mindset behind Chimera.
+   An introduction to the fundamental rules and mindset behind `Chimera`.
 
 2. **Use Cases** – **Flow × Service × Kit**  
    Clean split: Flow (Orchestrator), Service (work), Kit (data cleanup & normalization).
