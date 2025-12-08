@@ -1,5 +1,5 @@
 # **Chimera Architecture**
-A lightweight architectural experiment combining `Clean Architecture` with selective design patterns to increase flexibility and reduce boilerplate. 
+*A meta-architecture built from a collection of modular patterns, extending `Clean Architecture` with scalable structure, reduced boilerplate, and flexible system evolution*. 
 
 ---
 
